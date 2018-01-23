@@ -84,4 +84,30 @@ describe('SelectionBox', () => {
 
     expect(wrapper.state()).toEqual({ checked: true });
   });
+
+  it('passes props to Checkbox', () => {
+    const store = createStore({
+      selectedRowKeys: [],
+      selectionDirty: false,
+    });
+    const checkboxProps = {
+      name: 'testName',
+      id: 'testId',
+    };
+    const wrapper = mount(
+      <SelectionBox
+        store={store}
+        rowIndex="1"
+        disabled={false}
+        onChange={() => {
+        }}
+        defaultSelection={['1']}
+        {...checkboxProps}
+      />
+    );
+    wrapper.find('Checkbox').forEach((box) => {
+      expect(box.props().name).toEqual(checkboxProps.name);
+      expect(box.props().id).toEqual(checkboxProps.id);
+    });
+  });
 });
