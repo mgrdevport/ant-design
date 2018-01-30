@@ -38,6 +38,7 @@ module.exports = {
     '!components/*/locale/index.tsx',
     '!components/*/__tests__/**/type.tsx',
   ],
+  mapCoverage: true,
   transformIgnorePatterns,
   snapshotSerializers: [
     'enzyme-to-json/serializer',
