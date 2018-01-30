@@ -55,13 +55,13 @@ export default class SelectionBox extends React.Component<SelectionBoxProps, Sel
           {...rest}
         />
       );
+    } else {
+      return (
+        <Checkbox
+          checked={checked}
+          {...rest}
+        />
+      );
     }
-
-    return (
-      <Checkbox
-        checked={checked}
-        {...rest}
-      />
-    );
   }
 }
